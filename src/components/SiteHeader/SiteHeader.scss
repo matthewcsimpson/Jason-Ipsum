@@ -1,0 +1,66 @@
+.siteheader {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+
+    &__top {
+        height: 150px;
+        padding: 1rem;
+    }
+
+    &__jasonlist {
+        border: 1px solid green;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 35vw;
+        padding: 0;
+        overflow: hidden;
+        object-position: bottom;
+    }
+
+    &__jasonpic {
+        height: 35vw;
+        position: relative;
+        object-position: center;
+        &--conan {
+            z-index: 10;
+            left: -15vw;
+            transform-origin: bottom right;
+        }
+        &--aquaman {
+            z-index: 10;
+            left: -20vw;
+            transform-origin: bottom center;
+        }
+
+        &--momoa {
+            z-index: 35;
+            left: -40vw;
+            transform-origin: bottom center;
+        }
+        &--drogo {
+            z-index: 40;
+            left: -60vw;
+            transform-origin: bottom center;
+        }
+        &--idaho {
+            z-index: 45;
+            left: -85vw;
+            transform-origin: bottom center;
+        }
+        &--voss {
+            z-index: 50;
+            left: -100vw;
+            transform-origin: bottom center;
+        }
+        &:hover {
+            animation: shake 1s;
+            animation-iteration-count: infinite;
+        }
+    }
+}
