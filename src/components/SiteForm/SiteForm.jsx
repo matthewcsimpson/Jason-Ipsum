@@ -1,3 +1,5 @@
+import "./SiteForm.scss";
+
 function SiteForm({ handleFormSubmit }) {
   return (
     <>

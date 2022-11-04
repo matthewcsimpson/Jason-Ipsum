@@ -1,0 +1,47 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.paragraphselector {
+    width: 100%;
+
+    background: #e3e2df;
+    padding: 1rem;
+    border-radius: 1rem 1rem 0rem 0rem;
+
+    @include tablet {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &__form {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+    &__label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.9rem;
+        @include tablet {
+            font-size: 1.5rem;
+        }
+    }
+    &__select {
+        width: 50%;
+    }
+
+    &__button {
+        width: 50%;
+        border-radius: 0px;
+        background: darkblue;
+        border: 0px;
+        color: $site-button-text;
+    }
+}

@@ -1,3 +1,5 @@
+import "./SiteFooter.scss";
+
 function SiteFooter() {
   return (
     <>
