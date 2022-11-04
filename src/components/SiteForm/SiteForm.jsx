@@ -2,21 +2,29 @@ function SiteForm({ handleFormSubmit }) {
   return (
     <>
       <div className="paragraphselector">
-        <form className="paragraphseelctor__form" onSubmit={handleFormSubmit}>
-          <label htmlFor="paragraphs">How much Momoa can you handle?</label>
-          <select id="paragraphs" name="paragraphs">
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-            <option value="4">Four</option>
-            <option value="5">Five</option>
-            <option value="6">Six</option>
-            <option value="7">Seven</option>
-            <option value="8">Eight</option>
-            <option value="9">Nine</option>
-            <option value="10">Ten</option>
+        <form className="paragraphselector__form" onSubmit={handleFormSubmit}>
+          <label className="paragraphselector__label" htmlFor="paragraphs">
+            How much Momoa can you handle?
+          </label>
+          <select
+            className="paragraphselector__select"
+            id="paragraphs"
+            name="paragraphs"
+          >
+            <option value="1">One Paragraph</option>
+            <option value="2">Two Paragraphs</option>
+            <option value="3">Three Paragraphs</option>
+            <option value="4">Four Paragraphs</option>
+            <option value="5">Five Paragraphs</option>
+            <option value="6">Six Paragraphs</option>
+            <option value="7">Seven Paragraphs</option>
+            <option value="8">Eight Paragraphs</option>
+            <option value="9">Nine Paragraphs</option>
+            <option value="10">Ten Paragraphs</option>
           </select>
-          <button type="submit">Generate!</button>
+          <button className="paragraphselector__button" type="submit">
+            Generate!
+          </button>
         </form>
       </div>
     </>

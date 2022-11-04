@@ -3,11 +3,15 @@ import "./styles/styles.scss";
 
 // data
 import quotefile from "./data/jason.json";
+
+// components
 import SiteHeader from "./components/SiteHeader/SiteHeader";
+import SiteForm from "./components/SiteForm/SiteForm";
+import JasonText from "./components/JasonText/JasonText";
+import SiteFooter from "./components/SiteFooter/SiteFooter";
 
 // libraries
 import { useState } from "react";
-import SiteForm from "./components/SiteForm/SiteForm";
 
 function App() {
   const [jasonParagraph, setJasonParagraph] = useState([]);
@@ -24,7 +28,7 @@ function App() {
    */
   const makeParagraph = (quotes) => {
     let para = [];
-    const randomNumLines = Math.floor(Math.random() * (5 - 3 + 1) + 3);
+    const randomNumLines = Math.floor(Math.random() * (8 - 5 + 1) + 5);
     for (let i = 0; i < randomNumLines; i++) {
       const randomLine = Math.floor(Math.random() * quotes.length);
       para.push(quotes[randomLine].quote);
@@ -46,13 +50,11 @@ function App() {
 
   return (
     <>
-      <SiteHeader />
-      <SiteForm handleFormSubmit={handleFormSubmit} />
-      <div className="jasontext">
-        {jasonParagraph.length > 0 &&
-          jasonParagraph.map((para) => {
-            return <p>{para}</p>;
-          })}
+      <div className="siteWrapper">
+        <SiteHeader />
+        <SiteForm handleFormSubmit={handleFormSubmit} />
+        <JasonText jasonParagraph={jasonParagraph} />
+        <SiteFooter />
       </div>
     </>
   );
