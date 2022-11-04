@@ -4,10 +4,11 @@ function JasonText({ jasonParagraph }) {
   return (
     <>
       <div className="jasontext">
-        {jasonParagraph.length > 0 &&
-          jasonParagraph.map((para) => {
-            return <p>{para}</p>;
-          })}
+        {jasonParagraph.length > 0
+          ? jasonParagraph.map((para) => {
+              return <p>{para}</p>;
+            })
+          : null}
       </div>
     </>
   );

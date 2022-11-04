@@ -16,8 +16,8 @@ function SiteHeader() {
         <div className="siteheader__top">
           <h1 className="siteheader__heading">Jason Ipsum</h1>
           <p className="siteheader__text">
-            Placeholder text made up of quotes from your favourite Jason Momoa
-            Characters
+            Placeholder text made up of lines from your favourite Jason Momoa
+            Characters!
           </p>
         </div>
         <div className="siteheader__jasonlist">
