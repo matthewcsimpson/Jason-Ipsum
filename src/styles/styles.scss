@@ -24,11 +24,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .sitePanel {
+    display: block;
     width: 100%;
-    max-width: 64rem;
+    height: 100%;
+    max-width: 48rem;
+    min-width: 18rem;
     background: $surface-light;
     border-radius: 1rem;
     overflow: hidden;
