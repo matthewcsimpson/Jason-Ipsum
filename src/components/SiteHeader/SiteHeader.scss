@@ -20,7 +20,7 @@
     }
 
     &__heading {
-        color: #2d221b;
+        color: $text-heading-warm;
         text-transform: uppercase;
         font-size: 1.5rem;
 
@@ -39,54 +39,50 @@
 
     &__jasonlist {
         list-style: none;
-        display: flex;
-        flex-direction: row;
+        position: relative;
         width: 100%;
-        height: 35vw;
+        height: 25vw;
         padding: 0;
         overflow: hidden;
-        object-position: bottom;
     }
 
     &__jasonpic {
-        height: 35vw;
-        position: relative;
+        height: 25vw;
+        position: absolute;
+        bottom: -1rem;
         object-position: center;
+        object-fit: contain;
+        left: 50%;
+        transform: translateX(-50%);
         &--conan {
             z-index: 10;
-            left: -15vw;
-            bottom: -1rem;
+            left: 15%;
             transform-origin: bottom right;
         }
         &--aquaman {
             z-index: 10;
-            left: -20vw;
-            bottom: -1rem;
+            left: 28%;
             transform-origin: bottom center;
         }
 
         &--momoa {
             z-index: 35;
-            left: -40vw;
-            bottom: -1rem;
+            left: 43%;
             transform-origin: bottom center;
         }
         &--drogo {
             z-index: 40;
-            left: -60vw;
-            bottom: -1rem;
+            left: 58%;
             transform-origin: bottom center;
         }
         &--idaho {
             z-index: 45;
-            left: -85vw;
-            bottom: -1rem;
+            left: 73%;
             transform-origin: bottom center;
         }
         &--voss {
             z-index: 50;
-            left: -100vw;
-            bottom: -1rem;
+            left: 86%;
             transform-origin: bottom center;
         }
         &:hover {

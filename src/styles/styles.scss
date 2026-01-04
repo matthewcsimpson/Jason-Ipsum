@@ -15,7 +15,7 @@ html {
 
 body {
     margin: 0;
-    background: $site-main-bg;
+    background: $bg-gradient;
 }
 
 .siteWrapper {
@@ -29,7 +29,7 @@ body {
 .sitePanel {
     width: 100%;
     max-width: 64rem;
-    background: $site-section-bg;
+    background: $surface-light;
     border-radius: 1rem;
     overflow: hidden;
 

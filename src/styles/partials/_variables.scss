@@ -1,3 +1,6 @@
-$site-main-bg: linear-gradient(#52d1dc, darkblue);
-$site-section-bg: #e3e2df;
-$site-button-text: #e3e2df;
+$bg-gradient-top: #52d1dc;
+$bg-gradient-bottom: #00008b;
+$bg-gradient: linear-gradient($bg-gradient-top, $bg-gradient-bottom);
+$surface-light: #e3e2df;
+$text-heading-warm: #2d221b;
+$accent-primary-dark: $bg-gradient-bottom;

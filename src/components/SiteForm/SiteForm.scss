@@ -37,8 +37,8 @@
     &__button {
         width: 50%;
         border-radius: 0px;
-        background: darkblue;
+        background: $accent-primary-dark;
         border: 0px;
-        color: $site-button-text;
+        color: $surface-light;
     }
 }
