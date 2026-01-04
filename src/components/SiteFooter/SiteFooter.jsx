@@ -9,7 +9,7 @@ function SiteFooter() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://www.linkedin.com/in/matthewcsimpson/"
+            href="https://matthewcsimpson.dev"
           >
             Matthew Simpson
           </a>

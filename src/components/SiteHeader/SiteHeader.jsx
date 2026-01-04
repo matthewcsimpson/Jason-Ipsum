@@ -22,35 +22,34 @@ function SiteHeader() {
         </div>
         <div className="siteheader__jasonlist">
           <img
-            className="siteheader__jasonpic siteheader__jasonpic--conan"
+            className="siteheader__jasonpic"
             src={conan}
             alt="conan the barbarian"
           ></img>
           <img
-            className="siteheader__jasonpic siteheader__jasonpic--aquaman"
+            className="siteheader__jasonpic"
+            src={voss}
+            alt="baba voss"
+          ></img>
+          <img
+            className="siteheader__jasonpic"
             src={aquaman}
             alt="aquaman"
           ></img>
-
           <img
-            className="siteheader__jasonpic siteheader__jasonpic--momoa"
+            className="siteheader__jasonpic"
             src={momoa}
             alt="jason momoa"
           ></img>
           <img
-            className="siteheader__jasonpic siteheader__jasonpic--drogo"
+            className="siteheader__jasonpic"
             src={drogo}
             alt="khal drogo"
           ></img>
           <img
-            className="siteheader__jasonpic siteheader__jasonpic--idaho"
+            className="siteheader__jasonpic"
             src={idaho}
             alt="duncan idaho"
-          ></img>
-          <img
-            className="siteheader__jasonpic siteheader__jasonpic--voss"
-            src={voss}
-            alt="baba voss"
           ></img>
         </div>
       </header>

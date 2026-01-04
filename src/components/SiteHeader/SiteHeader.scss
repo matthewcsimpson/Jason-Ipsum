@@ -54,34 +54,35 @@
         object-fit: contain;
         left: 50%;
         transform: translateX(-50%);
-        &--conan {
+
+        &:nth-child(1) {
             z-index: 10;
-            left: 15%;
-            transform-origin: bottom right;
+            left: 12%;
+            transform-origin: bottom center;
         }
-        &--aquaman {
-            z-index: 10;
+        &:nth-child(2) {
+            z-index: 11;
             left: 28%;
             transform-origin: bottom center;
         }
-
-        &--momoa {
-            z-index: 35;
+        &:nth-child(3) {
+            z-index: 12;
             left: 43%;
             transform-origin: bottom center;
         }
-        &--drogo {
-            z-index: 40;
+        &:nth-child(4) {
+            z-index: 13;
             left: 58%;
             transform-origin: bottom center;
         }
-        &--idaho {
-            z-index: 45;
+        &:nth-child(5) {
+            z-index: 14;
             left: 73%;
             transform-origin: bottom center;
         }
-        &--voss {
-            z-index: 50;
+
+        &:nth-child(6) {
+            z-index: 10;
             left: 86%;
             transform-origin: bottom center;
         }

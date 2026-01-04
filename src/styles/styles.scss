@@ -21,7 +21,6 @@ body {
 .siteWrapper {
     width: 100%;
     min-height: 100vh;
-    padding: 2rem 1rem;
     display: flex;
     justify-content: center;
 }
@@ -32,12 +31,4 @@ body {
     background: $surface-light;
     border-radius: 1rem;
     overflow: hidden;
-
-    @include tablet {
-        padding: 0 1rem;
-    }
-
-    @include desktop {
-        padding: 0 2rem;
-    }
 }
