@@ -51,10 +51,12 @@ function App() {
   return (
     <>
       <div className="siteWrapper">
-        <SiteHeader />
-        <SiteForm handleFormSubmit={handleFormSubmit} />
-        <JasonText jasonParagraph={jasonParagraph} />
-        <SiteFooter />
+        <div className="sitePanel">
+          <SiteHeader />
+          <SiteForm handleFormSubmit={handleFormSubmit} />
+          <JasonText jasonParagraph={jasonParagraph} />
+          <SiteFooter />
+        </div>
       </div>
     </>
   );
