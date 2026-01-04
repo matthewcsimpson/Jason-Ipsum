@@ -25,32 +25,16 @@ function SiteHeader() {
             className="siteheader__jasonpic"
             src={conan}
             alt="conan the barbarian"
-          ></img>
-          <img
-            className="siteheader__jasonpic"
-            src={voss}
-            alt="baba voss"
-          ></img>
-          <img
-            className="siteheader__jasonpic"
-            src={aquaman}
-            alt="aquaman"
-          ></img>
-          <img
-            className="siteheader__jasonpic"
-            src={momoa}
-            alt="jason momoa"
-          ></img>
-          <img
-            className="siteheader__jasonpic"
-            src={drogo}
-            alt="khal drogo"
-          ></img>
+          />
+          <img className="siteheader__jasonpic" src={voss} alt="baba voss" />
+          <img className="siteheader__jasonpic" src={aquaman} alt="aquaman" />
+          <img className="siteheader__jasonpic" src={momoa} alt="jason momoa" />
+          <img className="siteheader__jasonpic" src={drogo} alt="khal drogo" />
           <img
             className="siteheader__jasonpic"
             src={idaho}
             alt="duncan idaho"
-          ></img>
+          />
         </div>
       </header>
     </>
