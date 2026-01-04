@@ -5,15 +5,13 @@
 .siteheader {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
 
     &__top {
         height: 150px;
         padding: 1rem;
-        background: $site-section-bg;
-        border-radius: 0 0 1rem 1rem;
 
         @include tablet {
             width: 80%;

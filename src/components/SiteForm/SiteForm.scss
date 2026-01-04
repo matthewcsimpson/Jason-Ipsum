@@ -3,10 +3,7 @@
 
 .paragraphselector {
     width: 100%;
-
-    background: #e3e2df;
     padding: 1rem;
-    border-radius: 1rem 1rem 0rem 0rem;
 
     @include tablet {
         width: 80%;
