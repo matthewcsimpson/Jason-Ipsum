@@ -6,6 +6,7 @@ import quotefile from "./data/jason.json";
 
 // components
 import SiteHeader from "./components/SiteHeader/SiteHeader";
+import JasonBanner from "./components/JasonBanner/JasonBanner.tsx";
 import SiteForm from "./components/SiteForm/SiteForm";
 import JasonText from "./components/JasonText/JasonText";
 import SiteFooter from "./components/SiteFooter/SiteFooter";
@@ -51,12 +52,11 @@ function App() {
   return (
     <>
       <div className="siteWrapper">
-        <div className="sitePanel">
-          <SiteHeader />
-          <SiteForm handleFormSubmit={handleFormSubmit} />
-          <JasonText jasonParagraph={jasonParagraph} />
-          <SiteFooter />
-        </div>
+        <SiteHeader />
+        <JasonBanner />
+        <SiteForm handleFormSubmit={handleFormSubmit} />
+        <JasonText jasonParagraph={jasonParagraph} />
+        <SiteFooter />
       </div>
     </>
   );
