@@ -9,4 +9,5 @@ If you have a project in the works and you need some placeholder text, look no f
 - Deployed via `Heroku`.
 
 ### Screenshot
-![Jason-Ipsum.com](https://github.com/matthewcsimpson/Jason-Ipsum/blob/main/public/screenshot.jpg)
+
+<img width="1120" height="1005" alt="jasonipsum" src="https://github.com/user-attachments/assets/e5986d2a-83fd-4d31-90b5-36bb6f452027" />
