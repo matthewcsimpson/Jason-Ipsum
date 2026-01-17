@@ -3,11 +3,11 @@
     position: relative;
     width: 80%;
     max-width: 50rem;
-    height: 25vw;
+    height: 10rem;
     padding: 0;
     overflow: hidden;
     &__pic {
-        height: 25vw;
+        height: 10rem;
         position: absolute;
         bottom: -0.5rem;
 
@@ -17,30 +17,47 @@
             transform-origin: bottom center;
         }
         &:nth-child(2) {
-            z-index: 9;
-            left: 15%;
-            transform-origin: bottom center;
-        }
-        &:nth-child(3) {
             z-index: 10;
-            left: 25%;
-            transform-origin: bottom center;
-        }
-        &:nth-child(4) {
-            z-index: 9;
-            right: 35%;
-            transform-origin: bottom center;
-        }
-        &:nth-child(5) {
-            z-index: 10;
-            right: 17%;
-            transform-origin: bottom center;
-        }
-
-        &:nth-child(6) {
-            z-index: 11;
             right: 2%;
             transform-origin: bottom center;
         }
+
+        &:nth-child(3) {
+            z-index: 11;
+            left: 15%;
+            transform-origin: bottom center;
+        }
+        &:nth-child(4) {
+            z-index: 11;
+            right: 15%;
+            transform-origin: bottom center;
+        }
+
+        &:nth-child(5) {
+            z-index: 12;
+            left: 25%;
+            transform-origin: bottom center;
+        }
+        &:nth-child(6) {
+            z-index: 12;
+            right: 25%;
+            transform-origin: bottom center;
+        }
+
+        &:nth-child(7) {
+            z-index: 13;
+            left: 35%;
+            transform-origin: bottom center;
+        }
+        &:nth-child(8) {
+            z-index: 13;
+            right: 35%;
+            transform-origin: bottom center;
+        }
+        // &:nth-child(9) {
+        //     z-index: 11;
+        //     right: 2%;
+        //     transform-origin: bottom center;
+        // }
     }
 }

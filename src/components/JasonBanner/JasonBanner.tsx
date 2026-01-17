@@ -1,22 +1,37 @@
 import "./JasonBanner.scss";
 
-// images
-import drogo from "../../assets/drogo.png";
-import momoa from "../../assets/momoa.png";
-import idaho from "../../assets/idaho.png";
-import aquaman from "../../assets/aquaman.png";
-import voss from "../../assets/voss.png";
-import conan from "../../assets/conan.png";
+const jasons = [
+  { src: "/jasons/aquaman.png", alt: "aquaman" },
+  { src: "/jasons/drogo.png", alt: "khal drogo" },
+  { src: "/jasons/voss.png", alt: "baba voss" },
+  { src: "/jasons/garrett.png", alt: "garrett" },
+  { src: "/jasons/idaho.png", alt: "duncan idaho" },
+  { src: "/jasons/dante.png", alt: "dante" },
+  { src: "/jasons/conan.png", alt: "conan the barbarian" },
+  { src: "/jasons/kaiana.png", alt: "kaiana" },
+];
+
+function shuffleArray<T>(array: T[]): T[] {
+  const arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 const JasonBanner = () => {
+  const shuffledJasons = shuffleArray(jasons);
   return (
     <div className="jasonlist">
-      <img className="jasonlist__pic" src={aquaman} alt="aquaman" />
-      <img className="jasonlist__pic" src={drogo} alt="khal drogo" />
-      <img className="jasonlist__pic" src={momoa} alt="jason momoa" />
-      <img className="jasonlist__pic" src={conan} alt="conan the barbarian" />
-      <img className="jasonlist__pic" src={voss} alt="baba voss" />
-      <img className="jasonlist__pic" src={idaho} alt="duncan idaho" />
+      {shuffledJasons.map((jason, index) => (
+        <img
+          key={`${jason.alt}-${index}`}
+          src={jason.src}
+          alt={jason.alt}
+          className="jasonlist__pic"
+        />
+      ))}
     </div>
   );
 };
