@@ -2,61 +2,56 @@
 @use "../../styles/partials/mixins" as *;
 
 .jasonbanner {
-    list-style: none;
     position: relative;
     width: 80%;
     max-width: 50rem;
     padding: 0;
     overflow: hidden;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.75rem;
 
-    &__pic {
+    // all boxes
+    > * {
         width: 100%;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        border-radius: $radius-card;
-        box-shadow: $shadow-card;
-        background: $colour-surface;
-        border: 2px solid $colour-border;
-        box-shadow: $shadow-card;
-        position: relative;
-        bottom: 0;
+    }
 
-        @include breakpoint($breakpoint-mobile) {
+    // default: only first box visible
+    > :nth-child(2),
+    > :nth-child(3),
+    > :nth-child(4) {
+        display: none;
+    }
+
+    @include breakpoint($breakpoint-mobile) {
+        > * {
             width: 48%;
         }
 
-        @include breakpoint($breakpoint-tablet) {
+        > :nth-child(2) {
+            display: block;
+        }
+    }
+
+    @include breakpoint($breakpoint-tablet) {
+        > * {
             width: 30%;
         }
 
-        @include breakpoint($breakpoint-desktop) {
+        > :nth-child(3) {
+            display: block;
+        }
+    }
+
+    @include breakpoint($breakpoint-desktop) {
+        > * {
             width: 22%;
         }
 
-        &:nth-child(2) {
-            display: none;
-
-            @include breakpoint($breakpoint-mobile) {
-                display: block;
-            }
-        }
-        &:nth-child(3) {
-            display: none;
-
-            @include breakpoint($breakpoint-tablet) {
-                display: block;
-            }
-        }
-
-        &:nth-child(4) {
-            display: none;
-
-            @include breakpoint($breakpoint-desktop) {
-                display: block;
-            }
+        > :nth-child(4) {
+            display: block;
         }
     }
 }
