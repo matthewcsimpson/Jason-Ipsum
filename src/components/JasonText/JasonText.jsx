@@ -1,3 +1,4 @@
+// styles
 import "./JasonText.scss";
 
 function JasonText({ jasonParagraph }) {

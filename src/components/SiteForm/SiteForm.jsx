@@ -1,56 +1,46 @@
+// styles
 import "./SiteForm.scss";
 
-function SiteForm({ handleFormSubmit }) {
+const SiteForm = ({ handleFormSubmit }) => {
+  const options = [
+    { value: 1, label: "One Paragraph" },
+    { value: 2, label: "Two Paragraphs" },
+    { value: 3, label: "Three Paragraphs" },
+    { value: 4, label: "Four Paragraphs" },
+    { value: 5, label: "Five Paragraphs" },
+    { value: 6, label: "Six Paragraphs" },
+    { value: 7, label: "Seven Paragraphs" },
+    { value: 8, label: "Eight Paragraphs" },
+    { value: 9, label: "Nine Paragraphs" },
+    { value: 10, label: "Ten Paragraphs" },
+  ];
   return (
-    <>
-      <div className="paragraphselector">
-        <form className="paragraphselector__form" onSubmit={handleFormSubmit}>
-          <label className="paragraphselector__label" htmlFor="paragraphs">
-            How much Momoa can you handle?
-          </label>
-          <select
-            className="paragraphselector__select"
-            id="paragraphs"
-            name="paragraphs"
-          >
-            <option className="paragraphselector__option" value="1">
-              One Paragraph
+    <div className="paragraphselector">
+      <form className="paragraphselector__form" onSubmit={handleFormSubmit}>
+        <label className="paragraphselector__label" htmlFor="paragraphs">
+          How much Momoa can you handle?
+        </label>
+        <select
+          className="paragraphselector__select"
+          id="paragraphs"
+          name="paragraphs"
+        >
+          {options.map((opt) => (
+            <option
+              className="paragraphselector__option"
+              value={opt.value}
+              key={opt.value}
+            >
+              {opt.label}
             </option>
-            <option className="paragraphselector__option" value="2">
-              Two Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="3">
-              Three Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="4">
-              Four Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="5">
-              Five Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="6">
-              Six Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="7">
-              Seven Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="8">
-              Eight Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="10">
-              Ten Paragraphs
-            </option>
-            <option className="paragraphselector__option" value="9">
-              Nine Paragraphs
-            </option>
-          </select>
-          <button className="paragraphselector__button" type="submit">
-            Generate!
-          </button>
-        </form>
-      </div>
-    </>
+          ))}
+        </select>
+        <button className="paragraphselector__button" type="submit">
+          Generate!
+        </button>
+      </form>
+    </div>
   );
-}
+};
 
 export default SiteForm;

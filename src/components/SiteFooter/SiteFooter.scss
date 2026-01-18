@@ -6,4 +6,16 @@
     padding: 1rem;
     max-width: 50rem;
     background: $surface-light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+        margin: 0.25rem 0;
+
+        &--small {
+            font-size: 0.5rem;
+        }
+    }
 }
