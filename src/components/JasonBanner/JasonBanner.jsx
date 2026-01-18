@@ -11,107 +11,16 @@ import { shuffleArray } from "../../lib/shuffleArray";
 // components
 import JasonImageBox from "../JasonImageBox/JasonImageBox";
 
+// helpers
+import getActiveCount from "../../lib/getActiveCount";
+import prefersReducedMotion from "../../lib/prefersReducedMotion";
+import pickRandom from "../../lib/pickRandom";
+import buildAvailableIds from "../../lib/buildAvailableIds";
+import ensureUniqueVisible from "../../lib/ensureUniqueVisible";
+
 // constants
 const BOX_COUNT = 4;
 const ROTATION_INTERVAL = 3000;
-
-// helpers
-
-/**
- * Determine how many boxes are considered active based on viewport width.
- * This must match the SCSS breakpoints.
- * @returns {number}
- */
-const getActiveCount = () => {
-  if (typeof window === "undefined") return 4;
-  if (window.matchMedia("(min-width: 1024px)").matches) return 4;
-  if (window.matchMedia("(min-width: 768px)").matches) return 3;
-  if (window.matchMedia("(min-width: 480px)").matches) return 2;
-  return 1;
-};
-
-/**
- * Detect whether the user prefers reduced motion for accessibility reasons.
- * @returns {boolean}
- */
-const prefersReducedMotion = () => {
-  if (typeof window === "undefined") return false;
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-};
-
-/**
- * Select a random element from an array.
- * @template T
- * @param {T[]} items
- * @returns {T | null}
- */
-const pickRandom = (items) => {
-  if (!items.length) return null;
-  return items[Math.floor(Math.random() * items.length)];
-};
-
-/**
- * Build a list of available image IDs that are not currently assigned
- * to any visible box.
- * @param {string[]} allIds
- * @param {Array<{currentId: string|null, nextId: string|null}>} boxes
- * @param {number} activeCount
- * @returns {string[]}
- */
-const buildAvailableIds = (allIds, boxes, activeCount) => {
-  const used = new Set();
-
-  for (let index = 0; index < activeCount; index++) {
-    const box = boxes[index];
-    if (!box) continue;
-
-    if (box.currentId) used.add(box.currentId);
-    if (box.nextId) used.add(box.nextId);
-  }
-
-  return allIds.filter((id) => !used.has(id));
-};
-
-/**
- * Ensure that all visible boxes contain unique images.
- * Resets fading state when active count changes.
- * @param {string[]} allIds
- * @param {Array<{currentId: string|null, nextId: string|null, isFading: boolean}>} boxes
- * @param {number} activeCount
- * @returns {Array<{currentId: string|null, nextId: string|null, isFading: boolean}>}
- */
-const ensureUniqueVisible = (allIds, boxes, activeCount) => {
-  const nextBoxes = boxes.map((box) => ({
-    ...box,
-    nextId: null,
-    isFading: false,
-  }));
-
-  const used = new Set();
-
-  for (let index = 0; index < activeCount; index++) {
-    const id = nextBoxes[index]?.currentId ?? null;
-
-    if (id && !used.has(id)) {
-      used.add(id);
-    } else if (nextBoxes[index]) {
-      nextBoxes[index].currentId = null;
-    }
-  }
-
-  for (let index = 0; index < activeCount; index++) {
-    if (!nextBoxes[index]) continue;
-    if (nextBoxes[index].currentId) continue;
-
-    const available = allIds.filter((id) => !used.has(id));
-    const chosenId = pickRandom(available) ?? allIds[0];
-
-    nextBoxes[index].currentId = chosenId;
-    used.add(chosenId);
-  }
-
-  return nextBoxes;
-};
 
 const JasonBanner = () => {
   const shuffledImages = useMemo(() => shuffleArray(jasonImages), []);
