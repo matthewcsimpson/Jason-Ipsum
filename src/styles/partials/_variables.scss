@@ -19,9 +19,12 @@ $colour-surface-alt: hsl(200, 20%, 18%);
 $colour-muted: hsl(200, 15%, 20%);
 $colour-muted-fg: hsl(200, 10%, 55%);
 $colour-border: hsl(200, 15%, 22%);
+$colour-error: hsl(0, 70%, 50%);
+$colour-error-light: hsl(0, 70%, 60%);
 
 $gradient-ocean: linear-gradient(135deg, hsl(195, 65%, 35%), hsl(190, 70%, 45%), hsl(185, 75%, 55%));
 $gradient-dark: linear-gradient(180deg, hsl(200, 25%, 8%), hsl(200, 30%, 5%));
 
 $shadow-ocean: 0 4px 30px -10px hsl(190, 70%, 45%, 0.4);
 $shadow-card: 0 10px 40px -15px hsl(0, 0%, 0%, 0.5);
+$shadow-error: 0 4px 20px -5px hsl(0, 70%, 50%, 0.6);

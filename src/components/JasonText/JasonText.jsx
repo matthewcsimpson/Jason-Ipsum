@@ -1,17 +1,16 @@
 // styles
 import "./JasonText.scss";
 
-function JasonText({ jasonParagraph }) {
+function JasonText({ paragraphs }) {
   return (
-    <>
-      <div className="jasontext">
-        {jasonParagraph.length > 0
-          ? jasonParagraph.map((para) => {
-              return <p>{para}</p>;
-            })
-          : null}
-      </div>
-    </>
+    <div className="jasontext">
+      {paragraphs.length > 0
+        ? paragraphs.map((paragraph, index) => {
+            const key = `${paragraph.split(" ")[0]}-${index}`;
+            return <p key={key}>{paragraph}</p>;
+          })
+        : null}
+    </div>
   );
 }
 

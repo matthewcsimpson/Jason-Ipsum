@@ -30,7 +30,7 @@ const jasonQuotes = [
     jason: "momoa",
     film: "justiceleague",
     quote:
-      "Icebergs in the harbor, four months since the last ship got through.",
+      "Icebergs in the harbour, four months since the last ship got through.",
   },
   {
     jason: "momoa",

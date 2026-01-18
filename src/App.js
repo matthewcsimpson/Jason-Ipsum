@@ -36,8 +36,11 @@ function App() {
       <div className="siteWrapper">
         <SiteHeader />
         <JasonBanner />
-        <SiteForm handleFormSubmit={handleFormSubmit} />
-        <JasonText jasonParagraph={jasonParagraph} />
+        <SiteForm
+          handleFormSubmit={handleFormSubmit}
+          paragraphs={jasonParagraph}
+        />
+        <JasonText paragraphs={jasonParagraph} />
         <SiteFooter />
       </div>
     </>
