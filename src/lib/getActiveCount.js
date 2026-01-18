@@ -1,4 +1,4 @@
-import { BOX_COUNT_BY_BREAKPOINT } from "../data/breakpointsBoxCount";
+import { BOX_COUNT_BY_BREAKPOINT } from "../data/boxCountByBreakpoint";
 
 /**
  * Determine how many boxes are active based on viewport width.

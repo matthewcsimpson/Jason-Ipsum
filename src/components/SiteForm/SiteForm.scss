@@ -92,5 +92,35 @@
             background: $colour-accent-light;
             box-shadow: 0 0 0 4px $colour-accent-light;
         }
+
+        &--secondary {
+            background: $colour-surface-alt;
+            color: $colour-fg;
+            box-shadow: $shadow-card;
+            &:hover {
+                background: $colour-surface;
+                box-shadow: 0 0 0 4px $colour-accent-light;
+            }
+        }
+
+        &--error {
+            background: $colour-error;
+            box-shadow: $shadow-error;
+            &:hover {
+                background: $colour-error-light;
+                box-shadow: 0 0 0 4px $colour-error-light;
+            }
+        }
+
+        &--disabled {
+            background: $colour-muted;
+            color: $colour-muted-fg;
+            cursor: not-allowed;
+            box-shadow: none;
+            &:hover {
+                background: $colour-muted;
+                box-shadow: none;
+            }
+        }
     }
 }
