@@ -20,6 +20,9 @@ const SiteForm = ({ handleFormSubmit, paragraphs = [] }) => {
     { value: 3, label: "Three Paragraphs" },
     { value: 4, label: "Four Paragraphs" },
     { value: 5, label: "Five Paragraphs" },
+    { value: 6, label: "Six Paragraphs" },
+    { value: 7, label: "Seven Paragraphs" },
+    { value: 8, label: "Eight Paragraphs" },
   ];
 
   const hasText = Array.isArray(paragraphs) && paragraphs.length > 0;
@@ -31,6 +34,9 @@ const SiteForm = ({ handleFormSubmit, paragraphs = [] }) => {
     };
   }, []);
 
+  /**
+   * Handle copying generated text to clipboard
+   */
   const handleCopy = async () => {
     if (!hasText) return;
 
