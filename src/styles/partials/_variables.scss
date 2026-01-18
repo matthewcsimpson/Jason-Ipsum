@@ -1,6 +1,27 @@
-$bg-gradient-top: #52d1dc;
-$bg-gradient-bottom: #00008b;
-$bg-gradient: linear-gradient($bg-gradient-top, $bg-gradient-bottom);
-$surface-light: #e3e2df;
-$text-heading-warm: #2d221b;
-$accent-primary-dark: $bg-gradient-bottom;
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 480px;
+$breakpoint-desktop: 768px;
+
+$font-display: "Bebas Neue", sans-serif;
+$font-body: "Inter", Arial, Helvetica, sans-serif;
+
+$radius-card: 1rem;
+$radius-pill: 2rem;
+$radius: 0.75rem;
+
+$colour-bg: hsl(200, 25%, 8%);
+$colour-fg: hsl(180, 15%, 92%);
+$colour-surface: hsl(200, 20%, 12%);
+$colour-accent: hsl(190, 70%, 45%);
+$colour-accent-light: hsl(185, 75%, 55%);
+$colour-accent-dark: hsl(195, 65%, 35%);
+$colour-surface-alt: hsl(200, 20%, 18%);
+$colour-muted: hsl(200, 15%, 20%);
+$colour-muted-fg: hsl(200, 10%, 55%);
+$colour-border: hsl(200, 15%, 22%);
+
+$gradient-ocean: linear-gradient(135deg, hsl(195, 65%, 35%), hsl(190, 70%, 45%), hsl(185, 75%, 55%));
+$gradient-dark: linear-gradient(180deg, hsl(200, 25%, 8%), hsl(200, 30%, 5%));
+
+$shadow-ocean: 0 4px 30px -10px hsl(190, 70%, 45%, 0.4);
+$shadow-card: 0 10px 40px -15px hsl(0, 0%, 0%, 0.5);

@@ -8,15 +8,15 @@ import { jasonImages } from "../../data/jasonImages";
 import { shuffleArray } from "../../lib/shuffleArray";
 
 const JasonBanner = () => {
-  const shuffledJasons = shuffleArray(jasonImages).slice(0, 5);
+  const shuffledJasons = shuffleArray(jasonImages).slice(0, 4);
   return (
-    <div className="jasonlist">
+    <div className="jasonbanner">
       {shuffledJasons.map((jason, index) => (
         <img
           key={`${jason.alt}-${index}`}
           src={jason.src}
           alt={jason.alt}
-          className="jasonlist__pic"
+          className="jasonbanner__pic"
         />
       ))}
     </div>

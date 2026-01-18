@@ -4,18 +4,20 @@
 .jasontext {
     padding: 0 1rem 0;
 
-    border-top: 1px solid $accent-primary-dark;
-    border-bottom: 1px solid $accent-primary-dark;
+    border-top: 1px solid $colour-accent;
+    border-bottom: 1px solid $colour-accent;
 
-    font-size: 1rem;
+    font-size: 1.1rem;
     max-width: 50rem;
     width: 80%;
-
     flex-grow: 1;
-
-    background: $surface-light;
-
-    @include tablet {
+    background: $colour-surface;
+    color: $colour-fg;
+    font-family: $font-body;
+    border-radius: $radius-card;
+    box-shadow: $shadow-card;
+    padding: 1.5rem 1rem;
+    @include breakpoint($breakpoint-tablet) {
         font-size: 1.25rem;
     }
 }
