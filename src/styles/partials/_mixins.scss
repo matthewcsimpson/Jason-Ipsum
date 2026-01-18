@@ -1,11 +1,5 @@
-@mixin tablet {
-    @media (min-width: 767px) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: 1279px) {
+@mixin breakpoint($breakpoint) {
+    @media (min-width: $breakpoint) {
         @content;
     }
 }

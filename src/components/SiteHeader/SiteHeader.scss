@@ -8,7 +8,9 @@
     margin: 0;
     padding: 0 0 1rem 0;
 
-    background: $surface-light;
+    background: $colour-surface;
+    border-radius: $radius-card;
+    box-shadow: $shadow-card;
 
     max-width: 50rem;
 
@@ -18,26 +20,36 @@
         min-height: 150px;
         padding: 1rem;
 
-        @include tablet {
+        @include breakpoint($breakpoint-tablet) {
             width: 80%;
             margin: 0 auto;
         }
     }
 
     &__heading {
-        color: $text-heading-warm;
         text-transform: uppercase;
-        font-size: 1.5rem;
+        font-size: 3rem;
+        font-family: $font-display;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+        @include breakpoint($breakpoint-tablet) {
+            font-size: 4rem;
+        }
 
-        @include tablet {
-            font-size: 2rem;
+        &--jason {
+            color: $colour-accent;
+        }
+        &--ipsum {
+            color: $colour-fg;
         }
     }
 
     &__text {
-        font-size: 1rem;
-
-        @include tablet {
+        font-size: 1.25rem;
+        color: $colour-muted-fg;
+        font-family: $font-body;
+        margin-bottom: 1rem;
+        @include breakpoint($breakpoint-tablet) {
             font-size: 1.5rem;
         }
     }

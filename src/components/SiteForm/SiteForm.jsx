@@ -9,10 +9,6 @@ const SiteForm = ({ handleFormSubmit }) => {
     { value: 4, label: "Four Paragraphs" },
     { value: 5, label: "Five Paragraphs" },
     { value: 6, label: "Six Paragraphs" },
-    { value: 7, label: "Seven Paragraphs" },
-    { value: 8, label: "Eight Paragraphs" },
-    { value: 9, label: "Nine Paragraphs" },
-    { value: 10, label: "Ten Paragraphs" },
   ];
   return (
     <div className="paragraphselector">
@@ -20,21 +16,20 @@ const SiteForm = ({ handleFormSubmit }) => {
         <label className="paragraphselector__label" htmlFor="paragraphs">
           How much Momoa can you handle?
         </label>
-        <select
-          className="paragraphselector__select"
-          id="paragraphs"
-          name="paragraphs"
-        >
+        <div className="paragraphselector__radio-group">
           {options.map((opt) => (
-            <option
-              className="paragraphselector__option"
-              value={opt.value}
-              key={opt.value}
-            >
-              {opt.label}
-            </option>
+            <label key={opt.value} className="paragraphselector__radio-label">
+              <input
+                type="radio"
+                name="paragraphs"
+                value={opt.value}
+                className="paragraphselector__radio"
+                defaultChecked={opt.value === 1}
+              />
+              <span className="paragraphselector__radio-text">{opt.value}</span>
+            </label>
           ))}
-        </select>
+        </div>
         <button className="paragraphselector__button" type="submit">
           Generate!
         </button>

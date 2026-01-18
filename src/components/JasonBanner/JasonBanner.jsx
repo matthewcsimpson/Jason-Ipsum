@@ -1,24 +1,128 @@
+// libraries
+import { useEffect, useMemo, useRef, useState } from "react";
+
 // styles
 import "./JasonBanner.scss";
 
 // data
 import { jasonImages } from "../../data/jasonImages";
-
-// functions
 import { shuffleArray } from "../../lib/shuffleArray";
 
+// components
+import JasonImageBox from "../JasonImageBox/JasonImageBox";
+
+// helpers
+import getActiveCount from "../../lib/getActiveCount";
+import prefersReducedMotion from "../../lib/prefersReducedMotion";
+import pickRandom from "../../lib/pickRandom";
+import buildAvailableIds from "../../lib/buildAvailableIds";
+import ensureUniqueVisible from "../../lib/ensureUniqueVisible";
+
+// constants
+const BOX_COUNT = 4;
+const ROTATION_INTERVAL = 3000;
+
 const JasonBanner = () => {
-  const shuffledJasons = shuffleArray(jasonImages).slice(0, 5);
+  const shuffledImages = useMemo(() => shuffleArray(jasonImages), []);
+  const imagesById = useMemo(() => {
+    const map = new Map();
+    for (const image of shuffledImages) map.set(image.src, image);
+    return map;
+  }, [shuffledImages]);
+
+  const allIds = useMemo(
+    () => shuffledImages.map((img) => img.src),
+    [shuffledImages],
+  );
+
+  const [activeCount, setActiveCount] = useState(() => getActiveCount());
+
+  const [boxes, setBoxes] = useState(() => {
+    const initialActive = getActiveCount();
+    const initial = Array.from({ length: BOX_COUNT }, (_, index) => ({
+      currentId: allIds[index] ?? allIds[0],
+      nextId: null,
+      isFading: false,
+    }));
+    return ensureUniqueVisible(allIds, initial, initialActive);
+  });
+
+  const rotationIndexRef = useRef(0);
+
+  // update activeCount on resize
+  useEffect(() => {
+    const onResize = () => setActiveCount(getActiveCount());
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  // when activeCount changes, normalize visible boxes (unique + not mid-fade)
+  useEffect(() => {
+    setBoxes((prev) => ensureUniqueVisible(allIds, prev, activeCount));
+  }, [activeCount, allIds]);
+
+  // set up rotation interval
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (activeCount <= 0) return;
+      if (prefersReducedMotion()) return;
+
+      const targetIndex = rotationIndexRef.current % activeCount;
+      rotationIndexRef.current = (rotationIndexRef.current + 1) % activeCount;
+
+      setBoxes((prevBoxes) => {
+        const target = prevBoxes[targetIndex];
+        if (!target) return prevBoxes;
+        if (target.isFading) return prevBoxes;
+
+        const availableIds = buildAvailableIds(allIds, prevBoxes, activeCount);
+        const nextId = pickRandom(availableIds);
+        if (!nextId) return prevBoxes;
+
+        return prevBoxes.map((box, index) => {
+          if (index !== targetIndex) return box;
+          return { ...box, nextId, isFading: true };
+        });
+      });
+    }, ROTATION_INTERVAL);
+
+    return () => clearInterval(intervalId);
+  }, [activeCount, allIds]);
+
+  /**
+   * Swap a box's image after its fade transition completes.
+   * @param {number} boxIndex
+   */
+  const handleFadeComplete = (boxIndex) => {
+    setBoxes((prevBoxes) => {
+      const box = prevBoxes[boxIndex];
+      if (!box || !box.isFading || !box.nextId) return prevBoxes;
+
+      return prevBoxes.map((item, index) =>
+        index === boxIndex
+          ? { ...item, currentId: item.nextId, nextId: null, isFading: false }
+          : item,
+      );
+    });
+  };
+
   return (
-    <div className="jasonlist">
-      {shuffledJasons.map((jason, index) => (
-        <img
-          key={`${jason.alt}-${index}`}
-          src={jason.src}
-          alt={jason.alt}
-          className="jasonlist__pic"
-        />
-      ))}
+    <div className="jasonbanner">
+      {boxes.map((box, index) => {
+        const currentImage = imagesById.get(box.currentId) ?? shuffledImages[0];
+        const nextImage = box.nextId ? imagesById.get(box.nextId) : null;
+
+        return (
+          <JasonImageBox
+            key={`jason-box-${index}`}
+            currentImage={currentImage}
+            nextImage={nextImage}
+            isFading={box.isFading}
+            onFadeComplete={() => handleFadeComplete(index)}
+          />
+        );
+      })}
     </div>
   );
 };

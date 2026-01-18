@@ -5,17 +5,22 @@
     width: 80%;
     padding: 1rem;
     max-width: 50rem;
-    background: $surface-light;
+    background: $colour-surface;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: $radius-card;
+    box-shadow: $shadow-card;
 
     &__text {
-        margin: 0.25rem 0;
-
+        margin: 0.5rem 0;
+        color: $colour-muted-fg;
+        font-family: $font-body;
+        font-size: 1rem;
         &--small {
-            font-size: 0.5rem;
+            font-size: 0.8rem;
+            color: $colour-muted-fg;
         }
     }
 }
