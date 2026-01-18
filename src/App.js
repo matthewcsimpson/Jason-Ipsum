@@ -1,52 +1,34 @@
+// libraries
+import { useState } from "react";
+
 // styles
 import "./styles/styles.scss";
 
-// data
-import quotefile from "./data/jason.json";
-
 // components
 import SiteHeader from "./components/SiteHeader/SiteHeader";
-import JasonBanner from "./components/JasonBanner/JasonBanner.tsx";
+import JasonBanner from "./components/JasonBanner/JasonBanner";
 import SiteForm from "./components/SiteForm/SiteForm";
 import JasonText from "./components/JasonText/JasonText";
 import SiteFooter from "./components/SiteFooter/SiteFooter";
 
-// libraries
-import { useState } from "react";
+// data
+import jasonQuotes from "./data/jasonQuotes.js";
+
+// functions
+import { genParagraphs } from "./lib/genParagraphs.js";
 
 function App() {
   const [jasonParagraph, setJasonParagraph] = useState([]);
 
+  /**
+   * Handle form submission
+   * @param {*} evt
+   */
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
-    setJasonParagraph(genParagraphs(evt.target.paragraphs.value));
-  };
-
-  /**
-   * Make a single paragraph of text.
-   * @param {array} quotes
-   * @returns string
-   */
-  const makeParagraph = (quotes) => {
-    let para = [];
-    const randomNumLines = Math.floor(Math.random() * (8 - 5 + 1) + 5);
-    for (let i = 0; i < randomNumLines; i++) {
-      const randomLine = Math.floor(Math.random() * quotes.length);
-      para.push(quotes[randomLine].quote);
-    }
-    return para.join(" ");
-  };
-
-  /**
-   * Generate 'num' number of paragraphs.
-   * @param {Number} num
-   */
-  const genParagraphs = (num) => {
-    let temp = [];
-    for (let i = 0; i < num; i++) {
-      temp.push(makeParagraph(quotefile));
-    }
-    return temp;
+    setJasonParagraph(
+      genParagraphs(jasonQuotes, Number(evt.target.paragraphs.value)),
+    );
   };
 
   return (
