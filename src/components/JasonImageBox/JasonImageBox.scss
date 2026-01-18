@@ -1,0 +1,38 @@
+@use "../../styles/partials/variables" as *;
+
+.jasonimagebox {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: $radius-card;
+    box-shadow: $shadow-card;
+    background: $colour-surface;
+    border: 2px solid $colour-border;
+
+    &__layer {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 800ms ease;
+    }
+
+    &__current {
+        opacity: 1;
+    }
+
+    &__next {
+        opacity: 0;
+    }
+
+    &.is-fading {
+        .jasonimagebox__current {
+            opacity: 0;
+        }
+        .jasonimagebox__next {
+            opacity: 1;
+        }
+    }
+}
