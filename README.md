@@ -10,4 +10,4 @@ If you have a project in the works and you need some placeholder text, look no f
 
 ### Screenshot
 
-<img width="1120" height="1005" alt="jasonipsum" src="https://github.com/user-attachments/assets/e5986d2a-83fd-4d31-90b5-36bb6f452027" />
+<img width="1624" height="1004" alt="Screenshot 2026-01-17 at 23 51 58" src="https://github.com/user-attachments/assets/e4db462a-ccf6-4459-b718-4b82928410f0" />
